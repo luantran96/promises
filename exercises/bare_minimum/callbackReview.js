@@ -23,7 +23,7 @@ var pluckFirstLineFromFile = function (filePath, callback) {
 var getStatusCode = function (url, callback) {
   request(url, (err, response, body) => {   
     if (!err) {      
-     var statusCode = response.statusCode;   
+      var statusCode = response.statusCode;   
       callback(err, response.statusCode);           
     } else {
       callback(err, null);

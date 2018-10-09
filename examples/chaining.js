@@ -17,7 +17,7 @@ var addNewUserToDatabaseAsync = function(user) {
     })
     .then(function(newUser) {
       return db.hashPasswordAsync(newUser); // Return a promise
-    })
+    }
     .then(function(securedUser) {
       return db.createAndSaveUserAsync(securedUser); // Return another promise
     });

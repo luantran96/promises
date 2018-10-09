@@ -15,7 +15,7 @@ var getGitHubProfile = function(user, callback) {
   var options = {
     url: 'https://api.github.com/users/' + user,
     headers: { 'User-Agent': 'request' },
-    json: true  // will JSON.parse(body) for us
+    json: true // will JSON.parse(body) for us
   };
 
   request.get(options, function(err, res, body) {
@@ -47,7 +47,7 @@ var generateRandomTokenAsync = Promise.promisify(generateRandomToken);
 
 var readFileAndMakeItFunny = function(filePath, callback) {
   fs.readFile(filePath, 'utf8', function(err, file) {
-    if (err) { return callback(err,null); }
+    if (err) { return callback(err, null); }
    
     var funnyFile = file.split('\n')
       .map(function(line) {
@@ -55,9 +55,9 @@ var readFileAndMakeItFunny = function(filePath, callback) {
       })
       .join('\n');
 
-    callback(null,funnyFile);
+    callback(null, funnyFile);
   });
-};
+};  
 
 var readFileAndMakeItFunnyAsync = Promise.promisify(readFileAndMakeItFunny); 
 
